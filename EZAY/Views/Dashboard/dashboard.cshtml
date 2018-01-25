@@ -1,0 +1,59 @@
+@model User_Dashboard.Models.Wrapper
+@{
+    ViewData["Title"] = "Auction";
+}
+
+<br>
+<h1>All Users</h1>
+<hr>
+<a href="/clear"><button class="btn btn-default">Log out</button></a>
+<h1>Hi, @ViewBag.Logger.firstname @ViewBag.Logger.lastname!</h1>
+<br>
+<h3>Current Auctions</h3>
+<br>
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th>Product</th>
+      <th>Seller</th>
+      <th>Top Bid</th>
+      <th>Time Remaining</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     
+    @{
+    
+      @foreach(var user in @ViewBag.Auction)
+      {
+       
+        @foreach(var stuff in @user.Auction)
+        {
+          @if(@stuff.DaysLeft > 0)
+          {
+            <tr>
+            <td><a href="show/@stuff.AuctionId"><p>@stuff.ProductName</p></a></td>
+            <td><p>@user.firstname</p></td>
+            <td><p>@stuff.HighestBid</p></td>
+            <td><p>@stuff.DaysLeft Day(s) Left</p></td>
+            @if(stuff.UserId == @ViewBag.LoggerId)
+            {
+              <td><a href="delete/@stuff.AuctionId">Delete</a></td>
+            }
+            </tr>
+          }
+
+        }
+
+      }
+    }
+    
+
+  </tbody>
+</table> 
+<hr>
+
+<h3>Your Current Wallet $@ViewBag.LoggerWallet</h3>
+<br>
+<a href="NewAuction"><button class="btn btn-default">New Auction</button></a>

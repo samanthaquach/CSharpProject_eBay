@@ -1,0 +1,55 @@
+@model User_Dashboard.Models.Wrapper
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<br>
+<a href="http://localhost:5000/dashboard"><button class="btn btn-default">Back</button></a>
+<a href="/clear"><button class="btn btn-default">Log out</button></a>
+<hr>
+
+@{
+    @foreach(var item in @Model.Auction)
+    {
+        <h3>@item.ProductName</h3>
+        <h5>@item.Description</h5>
+        <h4>Created by @item.User.firstname</h4>
+        <p>Current Highest Bid: $@item.HighestBid  --- By @item.Bidder</p>
+    }
+
+}
+    @if (ViewBag.showReg)
+    {
+        <ul class="notif seventy center">
+            @{
+                foreach (string error in ViewBag.errors)
+                {
+                    <li>@error</li>
+                }
+            }
+        </ul><!-- end_of_notif-->
+    }
+<form class="form-horizontal" action="" method="post">
+    <fieldset>
+        <input type="hidden" name="Bidder">
+        <!-- ==================== Bidding Bidding Bidding ================== -->
+        <div class="form-group">
+            <label for="HighestBid" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="number" class="form-control" name="HighestBid" id="inputHighestBid" placeholder='How much do you want to bid?'>
+            </div>
+        </div>
+
+            <!-- ===================== SUBMIT FORM BUTTON ============================ -->
+        <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            
+            <button class="btn btn-pop" type="submit" name="Bid" value="Bid" class="btn btn-primary">Bid</button>
+            
+        </div>
+        </div>
+                
+</fieldset>
+</form>

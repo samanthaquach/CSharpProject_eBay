@@ -1,0 +1,55 @@
+@model User_Dashboard.Models.LogUser
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<br><br>
+
+
+	@if (ViewBag.showLog)
+	{
+		<ul class="notif seventy center">
+			@{
+				foreach (string error in ViewBag.errors)
+				{
+					<li>@error</li>
+				}
+			}
+		</ul><!-- end_of_notif-->
+	}
+
+<a href="/"><button class="btn btn-default">Don't have an account?</button></a>    
+
+<form class="form-horizontal" asp-controller="Home" asp-action="login" method="post">
+    <fieldset>
+        
+        <!-- === email === -->
+
+        <div class="form-group">
+            <label for="inputName" class="col-md-2 control-label" asp-for="username">Username</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="username" id="inputUsername" placeholder="Username" asp-for="username">
+            </div>
+        </div>
+
+        <!-- ==== password ==== -->
+
+        <div class="form-group">
+            <label for="inputName" class="col-md-2 control-label" asp-for="password">Password</label>
+            <div class="col-md-10">
+                <input type="password" class="form-control" name="password" id="inputPassword" asp-for="password">
+            </div>
+        </div>
+
+        <!-- === submit === -->
+
+        <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button type="submit" name="login" class="btn btn-primary">Login</button>
+        </div>
+        </div>
+
+            
+    </fieldset>
+</form>

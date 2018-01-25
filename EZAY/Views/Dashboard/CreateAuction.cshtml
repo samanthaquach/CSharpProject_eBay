@@ -1,0 +1,57 @@
+@model User_Dashboard.Models.Auction
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<br>
+<br>
+<form class="form-horizontal" action="CreateAuction" method="post">
+    <fieldset>
+
+
+        <!-- ===================== ProductName ProductName ProductName ============================ -->
+        <div class="form-group">
+            <label for="ProductName" class="col-md-2 control-label">Product Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="ProductName" id="inputProductName" placeholder='Product Name'>
+            </div>
+        </div>
+
+        <!-- ==================== Description Description Description ================== -->
+        <div class="form-group">
+            <label for="Description" class="col-md-2 control-label">Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="Description" id="inputDescription" placeholder='Description'>
+            </div>
+        </div>
+
+        <!-- ==================== StartingBid StartingBid StartingBid ===================== -->
+        <div class="form-group">
+            <label for="StartingBid" class="col-md-2 control-label">Starting Bid</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control" name="StartingBid" id="inputStartingBid" placeholder='Starting Bid'>
+            </div>
+        </div>
+
+
+        <!-- ================== ENDINGDATE ENDINGDATE ENDINGDATE ENDINGDATE =============== -->
+
+        <div class="form-group">
+            <label for="EndDate" class="col-md-2 control-label">End Date</label>
+            <div class="col-md-10">
+                <input type="date" class="form-control" name="EndDate" id="inputDate">
+            </div>
+        </div>
+
+            <!-- ===================== SUBMIT FORM BUTTON ============================ -->
+        <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            
+            <a class="btn btn-dflt" href="/"><button class="btn btn-default">Go Home</button></a>
+            <button class="btn btn-pop" type="submit" name="CreateAuction" value="Create Auction" class="btn btn-primary">Create Auction</button>
+            
+        </div>
+        </div>
+                
+</fieldset>
+</form>
