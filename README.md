@@ -1,6 +1,6 @@
 # C# Project: Replica of eBay
 C# Project
 <br>
-Framework: Entity Core<br>
+Framework: Entity Core and ORM<br>
 Language: C# <br>
-Methodology: MVC and OOP <br>
+Methodology: MVC <br>
