@@ -6,36 +6,33 @@ eBay is a web e-commerce marketplace where millions of people trade every day. S
 ## Usage
 `` git clone: https://github.com/samq1/CSharpProject_eBay.git ``
 
+## Build
+Prerequisites:
+
+.NET Core SDK (>1.1)
+
+Run dotnet build from the solution directory.
+
 ## Dependencies
-``` 
-  Using: netcoreapp1.1
-  
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
-    <PackageReference Include="MySql.Data" Version="7.0.7-*" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="1.1.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.1.0-*" />
-    <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
-  </ItemGroup>
-  
-  dotnet restore
 
 ```
+  "Microsoft.AspNetCore.Diagnostics": "1.1.1",
+  "Microsoft.AspNetCore.Identity": "1.0.0",
+  "Microsoft.AspNetCore.Mvc": "1.1.2",
+  "Microsoft.AspNetCore.Server.Kestrel": "1.1.1",
+  "Microsoft.AspNetCore.Session": "1.1.1",
+  "Microsoft.AspNetCore.StaticFiles": "1.1.1",
+  "Microsoft.EntityFrameworkCore.Tools": "1.1.1",
+  "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.0.1",
+  "Microsoft.Extensions.Configuration.Json": "1.1.0",
+  "Microsoft.Extensions.Logging.Console": "1.1.1",
+  "Microsoft.NETCore.App": "1.1.2",
+  "MySql.Data": "7.0.7-m61",
+  "Npgsql.EntityFrameworkCore.PostgreSQL": "1.1.0",
+  "System.Data.SqlClient": "4.1.0",
+  "Twitter.Bootstrap": "3.0.1.1"
+  
+ ```
 ## Technology
 - Database: PostgresDB
 - C#
