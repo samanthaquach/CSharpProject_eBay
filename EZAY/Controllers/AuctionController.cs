@@ -14,7 +14,6 @@ namespace User_Dashboard.Controllers
     {
 
         private static List<string> errors = new List<string>();
-        // private static string whichErr = null;
 
         private User_DashboardContext _context;
         public AuctionController(User_DashboardContext context)
@@ -32,6 +31,7 @@ namespace User_Dashboard.Controllers
             {
                 return Redirect("/");
             }
+            //placing all the search function
             if (search != null)
             {
                 if (category == "Name")
@@ -48,11 +48,11 @@ namespace User_Dashboard.Controllers
 
             List<Auction> model = _context.Auction.ToList();
             List<Auction> Auction = _context.Auction.ToList();
+            
             ViewBag.Auction = model;
 
             return View("auction", model);
 
-            // return View("auction");
         }
 
         [HttpPost]
