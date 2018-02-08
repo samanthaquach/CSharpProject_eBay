@@ -1,0 +1,30 @@
+@using User_Dashboard.Models
+
+<br>
+<a href="http://localhost:5000/dashboard"><button class="btn btn-default">Back</button></a>
+<a href="/clear"><button class="btn btn-default">Log out</button></a>
+<hr>
+
+
+    <h1>Here is what we have:</h1>
+    <br>
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th>All Listings</th>
+    </tr>
+  </thead>
+  <tbody>
+     
+      <tr>
+            @foreach (var auction in Model)
+            {
+                <tr>
+                    <td><a href="show/@auction.AuctionId"><p class="listingName">@auction.ProductName</p></a></td>
+                </tr>
+            }
+      </tr>
+    
+
+  </tbody>
+</table> 

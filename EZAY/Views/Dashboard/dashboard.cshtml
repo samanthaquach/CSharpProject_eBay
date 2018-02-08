@@ -4,7 +4,15 @@
 }
 
 <br>
-<h1>All Users</h1>
+<h1>Search for anything</h1>
+<form  class="form-inline" asp-action="Search" asp-controller="Auction" method="Post">
+    <input class="form-control" type="text" name="searchContent">
+    <select class="form-control" name="categoryContent">
+        <option value="Name">Name</option>
+        <option value="Description">Description</option>
+    </select>
+    <button class="btn btn-default" type="submit">Search</button>
+</form>
 <hr>
 <a href="/clear"><button class="btn btn-default">Log out</button></a>
 <h1>Hi, @ViewBag.Logger.firstname @ViewBag.Logger.lastname!</h1>
